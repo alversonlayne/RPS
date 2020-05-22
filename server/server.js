@@ -20,8 +20,8 @@ io.on('connection', (sock)=>{
 
     if (waitingPlayer) {
         // start a game
-
-        waitingPlayer = null;
+        [sock, waitingPlayer].forEach((s)=> s.emit('message', 'Game Starts!'));
+        waitingPlayer = null;        
     } else {
         waitingPlayer = sock;
         waitingPlayer.emit('message', 'Waiting for an opponent')
