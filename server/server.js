@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 
-const RpsGame = requre('./rps-game');
+const RpsGame = require('./rps-game');
 
 const app = express();
 
